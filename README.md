@@ -1,2 +1,2 @@
 # labx
-Java Yazılım Geliştirici Yetiştirme Kampı-JAVA
+(2022)Yazılım Geliştirici Yetiştirme Kampı-JAVA
