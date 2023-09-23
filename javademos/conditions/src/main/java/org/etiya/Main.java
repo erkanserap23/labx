@@ -3,6 +3,8 @@ package org.etiya;
 public class Main {
     public static void main(String[] args) {
 
+        //if-else (Conditions):
+
         int number = 24;
         if (number < 20) {
             System.out.println("The number is less than 20.");
@@ -16,7 +18,7 @@ public class Main {
         }
 
 
-        //-------
+        //switch-case (Conditions):
         char grade = 'c';
 
         switch (grade) {
@@ -35,6 +37,11 @@ public class Main {
             default:
                 System.out.println("error message");
 
+
+                //Ternary Operatörü
+                int puan = 75;
+                String sonuc = (puan >= 50) ? "Geçti" : "Kaldı";
+                System.out.println(sonuc);
 
         }
     }
