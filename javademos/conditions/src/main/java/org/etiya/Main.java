@@ -14,9 +14,32 @@ public class Main {
             System.out.println("else");
             //code to be executed if the condition is not met or is false
         }
-    }
 
+
+        //-------
+        char grade = 'c';
+
+        switch (grade) {
+            case 'a':
+                System.out.println("Successful a");
+                break;
+            case 'b':
+                System.out.println("Successful b");
+                break;
+            case 'c':
+                System.out.println("Successful c");
+                break;
+            case 'd':
+                System.out.println("Failed d");
+                break;
+            default:
+                System.out.println("error message");
+
+
+        }
+    }
 }
+
 
    /*
    -->Conditions:
