@@ -6,39 +6,39 @@ public class Main {
 
         Product product1 = new Product();
 
-        product1.name = "Delonghi Kahve makinası";
-        product1.unitPrice = 7500;
-        product1.discount = 7;
-        product1.unitsInStock = 3;
-        product1.imageUrl = "eeff.jpg";
+        product1.setName("Delonghi Kahve makinası");
+        product1.setUnitPrice(7500);
+        product1.setDiscount(7);
+        product1.setUnitsInStock(3);
+        product1.setImageUrl("eeff.jpg");
 
-        System.out.println(product1.name);
+        System.out.println(product1.getName());
 
         Product product2 = new Product();
-        product2.name = "Smeg Kahve makinası";
-        product2.unitPrice = 7500;
-        product2.discount = 7;
-        product2.unitsInStock = 3;
-        product2.imageUrl = "eeff.jpg";
+        product2.setName("Semg Kahve makinası");
+        product2.setUnitPrice(7500);
+        product2.setDiscount(7);
+        product2.setUnitsInStock(3);
+        product2.setImageUrl("eeff.jpg");
 
-        System.out.println(product2.name);
+        System.out.println(product2.getName());
 
 
         Product product3 = new Product();
-        product3.name = "Kitchen Kahve makinası";
-        product3.unitPrice = 7500;
-        product3.discount = 7;
-        product3.unitsInStock = 3;
-        product3.imageUrl = "eeff.jpg";
+        product3.setName("Kitchen Kahve makinası");
+        product3.setUnitPrice(7500);
+        product3.setDiscount(7);
+        product3.setUnitsInStock(3);
+        product3.setImageUrl("eeff.jpg");
 
-        System.out.println(product3.name);
+        System.out.println(product3.getName());
         System.out.println("-----------");
 
         Product[] products = {product1, product2, product3};
 
 
         for (Product product : products) {
-            System.out.println(product.name);
+            System.out.println(product.getName());
         }
     }
 }
