@@ -49,9 +49,11 @@ public class Main {
 
         TeacherManager teacherManager = new TeacherManager(new HibernateDao());
         teacherManager.add(teacher);
+        teacherManager.getAll();
 
         CategoryManager categoryManager = new CategoryManager(new HibernateDao());
         categoryManager.add(category);
+        categoryManager.getAllCategory();
 
         CourseManager courseManager= new CourseManager(new HibernateDao());
         courseManager.add(course);

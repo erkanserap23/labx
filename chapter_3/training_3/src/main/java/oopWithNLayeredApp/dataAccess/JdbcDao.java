@@ -4,35 +4,49 @@ import oopWithNLayeredApp.entities.Category;
 import oopWithNLayeredApp.entities.Course;
 import oopWithNLayeredApp.entities.Teacher;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcDao implements  CourseDao ,TeacherDao,CategoryDao{
 
+    List<Teacher>teachers;
+    List<Category>categories;
+    List<Course>courses;
+
+    public JdbcDao() {
+        teachers = new ArrayList<>();
+        categories=new ArrayList<>();
+        courses=new ArrayList<>();
+        System.out.println("It works on Hibernate.");
+    }
+
+
 
     @Override
     public void add(Course course) {
-        System.out.println("çalıştım");
+        courses.add(course);
     }
 
 
     @Override
     public void add(Teacher teacher) {
-        System.out.println("çalıştım");
+        teachers.add(teacher);
     }
-
 
     @Override
     public List<Teacher> getAll() {
-        return null;
+        return teachers;
     }
 
     @Override
     public void add(Category category) {
+        categories.add(category);
 
     }
 
     @Override
     public List<Category> getAllCategory() {
-        return null;
+
+        return categories;
     }
 }
