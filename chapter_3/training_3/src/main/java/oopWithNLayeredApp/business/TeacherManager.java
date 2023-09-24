@@ -18,6 +18,7 @@ public class TeacherManager {
         for (Teacher teacher3 : teacherDao.getAll()) {
            if(teacher.getName()==teacher3.getName()){
                throw  new Exception("The addition was not completed, please change the teacher name.");
+               //System.out.println("The addition was not completed, please change the teacher name.");
            }
            teacherDao.add(teacher);
         }

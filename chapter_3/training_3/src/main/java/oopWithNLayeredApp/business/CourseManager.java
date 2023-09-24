@@ -16,6 +16,7 @@ public class CourseManager {
             throw new Exception("The product price is less than 0.");
         }
         courseDao.add(curse);
+        System.out.println(" added "+curse);
     }
 
 

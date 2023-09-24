@@ -6,24 +6,33 @@ import oopWithNLayeredApp.entities.Teacher;
 
 import java.util.List;
 
-public class JdbcDao implements TeacherDao,CategoryDao, CourseDao  {
+public class JdbcDao implements  CourseDao ,TeacherDao,CategoryDao{
+
+
+    @Override
+    public void add(Course course) {
+        System.out.println("çalıştım");
+    }
+
+
+    @Override
+    public void add(Teacher teacher) {
+        System.out.println("çalıştım");
+    }
+
+
+    @Override
+    public List<Teacher> getAll() {
+        return null;
+    }
+
     @Override
     public void add(Category category) {
 
     }
 
     @Override
-    public void add(Course course) {
-
-    }
-
-    @Override
-    public void add(Teacher teacher) {
-
-    }
-
-    @Override
-    public List<Teacher> getAll() {
+    public List<Category> getAllCategory() {
         return null;
     }
 }
