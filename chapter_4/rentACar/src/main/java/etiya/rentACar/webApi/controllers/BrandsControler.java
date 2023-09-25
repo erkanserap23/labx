@@ -34,3 +34,8 @@ public class BrandsControler {
 
 // api de isimlendirmelerde s ekiyle  çogul kullanılır.
 // rest-full control için
+
+ // @RestController  anatasyon bilgilendirme derleyiçi çalıştıgında
+ // @RequestMapping("/api/brans") controle erişme
+ // Ioc
+// @Autowired kim brans sevisi impleme ediyor bul

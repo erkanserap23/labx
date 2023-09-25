@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+@Repository //bu sınıf bir bussnes nesnesidir
 public class InMemoryBrandRepository implements BrandDao {
 
   List<Brand>brands;
