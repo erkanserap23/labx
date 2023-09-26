@@ -1,4 +1,4 @@
-package oopWithNLayeredApp.dataAccess;
+package oopWithNLayeredApp.dataAccess.course;
 
 import oopWithNLayeredApp.entities.Course;
 

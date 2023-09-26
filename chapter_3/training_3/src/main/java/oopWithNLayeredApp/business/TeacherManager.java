@@ -1,6 +1,7 @@
 package oopWithNLayeredApp.business;
 
-import oopWithNLayeredApp.dataAccess.TeacherDao;
+import oopWithNLayeredApp.dataAccess.teacher.TeacherDao;
+import oopWithNLayeredApp.entities.Category;
 import oopWithNLayeredApp.entities.Teacher;
 
 import java.util.List;
@@ -12,25 +13,25 @@ public class TeacherManager {
         this.teacherDao = teacherDao;
     }
 
-    public void add(Teacher teacher) throws Exception {
 
+        public void add(Teacher teacherX) {
+            boolean isActive = true;
 
-        for (Teacher teacher3 : teacherDao.getAll()) {
-           if(teacher.getName()==teacher3.getName()){
-               throw  new Exception("The addition was not completed, please change the teacher name.");
-               //System.out.println("The addition was not completed, please change the teacher name.");
-           }
-           teacherDao.add(teacher);
+            for (Teacher teacher : teacherDao.getAll()) {
+                if (teacher.getName().equals(teacher.getName())) {
+                    isActive = false;
+                    System.out.println("The addition was not completed, please change the category name.");
+                    break; // Eğer aynı isimde bir kategori bulursak döngüyü sonlandırıyoruz.
+                }
+            }
+
+            if (isActive) {
+              teacherDao.add(teacherX);
+                System.out.println("Category added: " + teacherX.getName());
+            }
         }
-
-
-
-    };
 
     public List<Teacher> getAll() {
-        for (Teacher teacher : teacherDao.getAll()) {
-            System.out.println(teacher.getName());
-        }
         return teacherDao.getAll();
     }
 

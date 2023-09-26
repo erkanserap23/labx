@@ -1,4 +1,4 @@
-package oopWithNLayeredApp.dataAccess;
+package oopWithNLayeredApp.dataAccess.category;
 
 import oopWithNLayeredApp.entities.Category;
 

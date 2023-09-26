@@ -1,6 +1,6 @@
 package oopWithNLayeredApp.business;
 
-import oopWithNLayeredApp.dataAccess.CourseDao;
+import oopWithNLayeredApp.dataAccess.course.CourseDao;
 import oopWithNLayeredApp.entities.Course;
 
 public class CourseManager {

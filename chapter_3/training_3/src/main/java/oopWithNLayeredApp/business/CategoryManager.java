@@ -1,36 +1,40 @@
 package oopWithNLayeredApp.business;
 
-import oopWithNLayeredApp.dataAccess.CategoryDao;
+import oopWithNLayeredApp.dataAccess.category.CategoryDao;
 import oopWithNLayeredApp.entities.Category;
 
 import java.util.List;
 
 public class CategoryManager {
 
+
+
+    private CategoryDao categoryDao;
     public CategoryManager(CategoryDao categoryDao) {
+
         this.categoryDao = categoryDao;
     }
 
-    private CategoryDao categoryDao;
+    public void add(Category categoryX) {
+        boolean isActive = true;
 
-
-
-    public void add(Category category) throws Exception {
-        for (Category category1 : categoryDao.getAllCategory()) {
-            if (category1.getName() == category.getName()) {
-                throw  new Exception("The addition was not completed, please change the teacher name.");
-                //System.out.println("The addition was not completed, please change the category name.");
+        for (Category category : categoryDao.getAllCategory()) {
+            if (category.getName().equals(categoryX.getName())) {
+                isActive = false;
+                System.out.println("The addition was not completed, please change the category name.");
+                break; // Eğer aynı isimde bir kategori bulursak döngüyü sonlandırıyoruz.
             }
-            categoryDao.add(category);
-            System.out.println("Category added");
         }
 
+        if (isActive) {
+            categoryDao.add(categoryX);
+            System.out.println("Category added: " + categoryX.getName());
+        }
     }
 
+
+
     public List<Category> getAllCategory(){
-        for (Category category : categoryDao.getAllCategory()) {
-            System.out.println(category.getName());
-        }
         return categoryDao.getAllCategory();
     }
 
