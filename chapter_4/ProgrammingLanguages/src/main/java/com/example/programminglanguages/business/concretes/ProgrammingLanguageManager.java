@@ -9,7 +9,6 @@ import java.util.List;
 @Service
 public class ProgrammingLanguageManager implements ProgrammingLanguageService {
 
-
     private ProgrammingLanguageRepository programmingLanguageRepository;
 
     public ProgrammingLanguageManager(ProgrammingLanguageRepository programmingLanguageRepository) {
@@ -22,12 +21,10 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
         if (programmingLanguage.getName() == null) {
             throw new Exception("Empty value cannot be made");
         }
-
         for (ProgrammingLanguage value : programmingLanguageRepository.getAll()) {
             if (programmingLanguage.getName() == value.getName()) {
                 throw new Exception("Existing language cannot be added again");
             }
-
             programmingLanguageRepository.add(programmingLanguage);
             System.out.println("Added");
 
@@ -46,12 +43,12 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
 
     @Override
     public List<ProgrammingLanguage> getAll() {
-        programmingLanguageRepository.getAll();
-        return null;
+        return programmingLanguageRepository.getAll();
     }
 
     @Override
     public ProgrammingLanguage getById(int id) {
-    return programmingLanguageRepository.getById(id);
+
+        return programmingLanguageRepository.getById(id);
     }
 }
