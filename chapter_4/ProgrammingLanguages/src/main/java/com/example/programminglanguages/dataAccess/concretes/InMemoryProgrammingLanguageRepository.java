@@ -27,9 +27,9 @@ public class InMemoryProgrammingLanguageRepository implements ProgrammingLanguag
     }
 
     @Override
-    public void delete(ProgrammingLanguage programmingLanguages) throws Exception {
-        if (getById(programmingLanguages.getId()) != null) {
-            programmingLanguagesList.remove(programmingLanguages);
+    public void delete(int id) throws Exception {
+        if (getById(id) != null) {
+            programmingLanguagesList.remove(id);
             System.out.println("deleted");
 
         } else {
@@ -39,10 +39,14 @@ public class InMemoryProgrammingLanguageRepository implements ProgrammingLanguag
     }
 
     @Override
-    public void update(ProgrammingLanguage programmingLanguages) throws Exception {
-        if (getById(programmingLanguages.getId()) != null) {
-            programmingLanguages.setName(programmingLanguages.getName());
-            System.out.println("updated");
+    public void update( int id, ProgrammingLanguage programmingLanguages) throws Exception {
+        if (getById(id) != null) {
+            for(ProgrammingLanguage value:programmingLanguagesList){
+                if(value.getId()==id){
+                    value.setName(programmingLanguages.getName());
+                    System.out.println("updated");
+                }
+            }
         } else {
             throw new Exception("language for id not found");
         }
