@@ -1,13 +1,13 @@
 package com.example.programminglanguages.entities.concretes;
 
-public class ProgrammingLanguages {
+public class ProgrammingLanguage {
     private int id;
     private String name;
 
-    public ProgrammingLanguages() {
+    public ProgrammingLanguage() {
     }
 
-    public ProgrammingLanguages(int id, String name) {
+    public ProgrammingLanguage(int id, String name) {
         this.setId(id);
         this.setName(name);
     }
