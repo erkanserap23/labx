@@ -11,11 +11,11 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@NoArgsConstructor
 @AllArgsConstructor
 public class BrandManager implements BrandService {
 
@@ -24,12 +24,14 @@ public class BrandManager implements BrandService {
 
     @Override
     public List<GetAllBrandsResponse> getAll() {
-            List<Brand> brands = brandRepository.findAll();
 
-            List<GetAllBrandsResponse> brandsResponses = brands.stream()
-                    .map(brand -> this.modelMapperService.forResponse().
-                            map(brand,GetAllBrandsResponse.class)).collect(Collectors.toList());
-            return brandsResponses;
+        List<Brand> brands= brandRepository.findAll();
+        List<GetAllBrandsResponse> brandsResponses = brands.stream()
+                .map(brand -> modelMapperService.forResponse()
+                        .map(brand, GetAllBrandsResponse.class))
+                .collect(Collectors.toList());
+
+        return brandsResponses;
         }
 
     @Override

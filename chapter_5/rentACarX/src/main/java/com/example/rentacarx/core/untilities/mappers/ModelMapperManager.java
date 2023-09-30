@@ -1,16 +1,11 @@
-package com.example.rentacar.core.utilities.mappers;
+package com.example.rentacarx.core.untilities.mappers;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.stereotype.Service;
 
-@Service
-@AllArgsConstructor
-@NoArgsConstructor
-public class ModelMapperManager implements  ModelMapperService{
-    private  ModelMapper modelMapper =new ModelMapper();
+public class ModelMapperManager implements ModelMapperService {
+
+    private  ModelMapper modelMapper;
     @Override
     public ModelMapper forResponse() {
         this.modelMapper.getConfiguration()
@@ -25,6 +20,7 @@ public class ModelMapperManager implements  ModelMapperService{
         this.modelMapper.getConfiguration()
                 .setAmbiguityIgnored(true)
                 .setMatchingStrategy(MatchingStrategies.STANDARD);
+
         return this.modelMapper;
     }
 }
