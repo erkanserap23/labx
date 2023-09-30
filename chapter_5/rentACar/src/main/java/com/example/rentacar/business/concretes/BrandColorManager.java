@@ -27,8 +27,8 @@ public class BrandColorManager implements BrandColorService {
         List<BrandColor> brandColors= brandColorRepository.findAll();
 
         List<GetAllBrandColorResponse> brandColorsResponses = brandColors.stream()
-                .map(brand -> modelMapperService.forResponse()
-                        .map(brand, GetAllBrandColorResponse.class))
+                .map(brandColor -> modelMapperService.forResponse()
+                        .map(brandColor, GetAllBrandColorResponse.class))
                 .collect(Collectors.toList());
         return brandColorsResponses;
     }

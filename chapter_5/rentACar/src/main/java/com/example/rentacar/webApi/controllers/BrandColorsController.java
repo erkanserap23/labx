@@ -27,7 +27,7 @@ public class BrandColorsController {
     }
     @PostMapping()
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody() CreateBrandColorRequest createBrandColorRequest){
+    public void add(@RequestBody CreateBrandColorRequest createBrandColorRequest){
         this.brandColorService.add(createBrandColorRequest);
     }
     @PutMapping()
@@ -41,3 +41,4 @@ public class BrandColorsController {
 
 
 }
+
