@@ -5,6 +5,7 @@ import com.example.rentacar.business.requests.CreateBrandColorRequest;
 import com.example.rentacar.business.requests.UpdateBrandColorRequest;
 import com.example.rentacar.business.responses.GetAllBrandColorResponse;
 import com.example.rentacar.business.responses.GetByIdBrandColorResponse;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -27,11 +28,11 @@ public class BrandColorsController {
     }
     @PostMapping()
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody CreateBrandColorRequest createBrandColorRequest){
+    public void add(@RequestBody() CreateBrandColorRequest createBrandColorRequest){
         this.brandColorService.add(createBrandColorRequest);
     }
     @PutMapping()
-    public void update(@RequestBody UpdateBrandColorRequest updateBrandColorRequest){
+    public void update(@RequestBody() UpdateBrandColorRequest updateBrandColorRequest){
         this.brandColorService.update(updateBrandColorRequest);
     }
     @DeleteMapping("/{id}")

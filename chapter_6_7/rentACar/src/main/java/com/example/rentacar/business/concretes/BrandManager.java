@@ -5,6 +5,7 @@ import com.example.rentacar.business.requests.CreateBrandRequest;
 import com.example.rentacar.business.requests.UpdateBrandRequest;
 import com.example.rentacar.business.responses.GetAllBrandsResponse;
 import com.example.rentacar.business.responses.GetByIdBrandResponse;
+import com.example.rentacar.business.rules.BrandBusinessRules;
 import com.example.rentacar.core.utilities.mappers.ModelMapperService;
 import com.example.rentacar.dataAccess.abstracts.BrandRepository;
 import com.example.rentacar.entities.concretes.Brand;
@@ -20,6 +21,7 @@ public class BrandManager implements BrandService {
 
     private BrandRepository brandRepository; //carColorRepository
     private ModelMapperService modelMapperService; //
+    private BrandBusinessRules brandBusinessRules;
 
     @Override
     public List<GetAllBrandsResponse> getAll() {
@@ -35,6 +37,7 @@ public class BrandManager implements BrandService {
 
     @Override
     public void add(CreateBrandRequest createBrandRequest) {
+        this.brandBusinessRules.checkIfBrandNameExists(createBrandRequest.getName());
        Brand brand =this.modelMapperService.forRequest().map(createBrandRequest,Brand.class);
        this.brandRepository.save(brand);
     }
