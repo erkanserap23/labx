@@ -20,4 +20,5 @@ public class Technology {
     @Column(name="name")
     private  String name;
 
+
 }

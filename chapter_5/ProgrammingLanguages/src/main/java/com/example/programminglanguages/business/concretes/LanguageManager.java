@@ -26,7 +26,6 @@ public class LanguageManager implements LanguagesService {
         List<Languages> languagesList = languagesRepository.findAll();
 
         List<GetAllLanguageResponse> languageResponses = languagesList.stream()
-
                 .map(languages -> this.modelMapperService.forResponse()
                         .map(languages, GetAllLanguageResponse.class)).collect(Collectors.toList());
         return languageResponses;
@@ -50,8 +49,6 @@ public class LanguageManager implements LanguagesService {
     @Override
     public void delete(int id) {
         this.languagesRepository.deleteById(id);
-
-
     }
 
     @Override
