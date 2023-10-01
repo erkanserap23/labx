@@ -9,9 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateModelRequest {
-    @NonNull
-    @NotBlank
-    @Size(min=3,max=20)
+
     private String name;
     private int brandId;
 }

@@ -29,7 +29,7 @@ public class BrandsController {
     }
     @PostMapping()
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody() @Valid()  CreateBrandRequest createBrandRequest){
+    public void add(@RequestBody() @Valid() CreateBrandRequest createBrandRequest){
         this.brandService.add(createBrandRequest);
     }
     @PutMapping()
