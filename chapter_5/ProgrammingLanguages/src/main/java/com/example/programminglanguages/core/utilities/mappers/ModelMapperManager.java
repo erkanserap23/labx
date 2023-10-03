@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class ModelMapperManager implements ModelMapperService {
-    ModelMapper modelMapper= new ModelMapper();
+    ModelMapper modelMapper;
 
     @Override
     public ModelMapper forResponse() {
